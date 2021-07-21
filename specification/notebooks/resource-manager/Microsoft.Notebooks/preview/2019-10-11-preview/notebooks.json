@@ -503,6 +503,10 @@
         "hostname": {
           "description": "The friendly string identifier of the creator of the NotebookProxy resource.",
           "type": "string"
+        },
+        "region": {
+          "description": "The region of the NotebookProxy resource.",
+          "type": "string"
         }
       }
     },
@@ -632,17 +636,65 @@
           "readOnly": true,
           "type": "string",
           "description": "The type of the resource. Ex- Microsoft.Storage/storageAccounts or Microsoft.Notebooks/notebookProxies."
+        },
+        "systemData": {
+          "$ref": "#/definitions/NotebookResourceSystemData"
         }
       },
       "x-ms-azure-resource": true
+    },
+    "NotebookResourceSystemData": {
+      "type": "object",
+      "description": "System data for notebook resource",
+      "properties": {
+        "createdBy": {
+          "type": "string"
+        },
+        "createdByType": {
+          "format": "int32",
+          "enum": [0, 1, 2, 3],
+          "type": "integer"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "type": "string"
+        },
+        "lastModifiedByType": {
+          "format": "int32",
+          "enum": [0, 1, 2, 3],
+          "type": "integer"
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
     },
     "CloudError": {
       "type": "object",
       "description": "Wrapper for error response to follow ARM guidelines.",
       "properties": {
-        "error": {
-          "description": "The error response.",
-          "$ref": "#/definitions/ErrorResponse"
+        "message": {
+          "type": "string",
+          "description": "Error message"
+        },
+        "code": {
+          "type": "string",
+          "description": "Error code"
+        },
+        "target": {
+          "type": "string",
+          "description": "Error target"
+        },
+        "details": {
+          "type": "array",
+          "description": "An array of cloud error objects.",
+          "items": {
+            "$ref": "#/definitions/CloudError"
+          }
         }
       }
     },
