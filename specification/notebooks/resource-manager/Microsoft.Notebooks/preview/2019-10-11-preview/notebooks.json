@@ -685,61 +685,68 @@
       "x-ms-azure-resource": true
     },
     "CloudError": {
+      "description": "The error detail.",
       "type": "object",
-      "description": "Wrapper for error response to follow ARM guidelines.",
       "properties": {
-        "message": { "type": "string" },
-        "code": { "type": "string" },
-        "target": { "type": "string" },
+        "code": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The error code."
+        },
+        "message": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The error message."
+        },
+        "target": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The error target."
+        },
         "details": {
-          "uniqueItems": false,
+          "readOnly": true,
           "type": "array",
-          "items": { "$ref": "#/definitions/ErrorDetail" }
+          "items": {
+            "$ref": "#/definitions/ErrorDetail"
+          },
+          "description": "The error details."
+        },
+        "additionalInfo": {
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorAdditionalInfo"
+          },
+          "description": "The error additional info."
         }
       }
     },
     "ErrorResponse": {
+      "title": "Error response",
+      "description": "Common error response for all Azure Resource Manager APIs to return error details for failed operations. (This also follows the OData error response format.).",
       "type": "object",
-      "description": "Error response information.",
       "properties": {
-        "code": {
-          "type": "string",
-          "description": "Error code."
-        },
-        "message": {
-          "type": "string",
-          "description": "Error message."
-        },
-        "details": {
-          "type": "array",
-          "description": "An array of error detail objects.",
-          "items": {
-            "$ref": "#/definitions/ErrorDetail"
-          }
+        "error": {
+          "description": "The error object.",
+          "$ref": "#/definitions/ErrorDetail"
         }
-      },
-      "required": [
-        "code",
-        "message"
-      ]
+      }
     },
-    "ErrorDetail": {
+    "ErrorAdditionalInfo": {
       "type": "object",
-      "description": "Error detail information.",
       "properties": {
-        "code": {
+        "type": {
+          "readOnly": true,
           "type": "string",
-          "description": "Error code."
+          "description": "The additional info type."
         },
-        "message": {
-          "type": "string",
-          "description": "Error message."
+        "info": {
+          "readOnly": true,
+          "type": "object",
+          "description": "The additional info."
         }
       },
-      "required": [
-        "code",
-        "message"
-      ]
+      "description": "The resource management error additional info."
     },
     "Operation": {
       "description": "Azure Notebooks Proxy REST API operation",
