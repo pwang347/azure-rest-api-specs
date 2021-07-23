@@ -694,7 +694,7 @@
         "details": {
           "uniqueItems": false,
           "type": "array",
-          "items": { "$ref": "#/definitions/CloudError" }
+          "items": { "$ref": "#/definitions/ErrorDetail" }
         }
       }
     },
