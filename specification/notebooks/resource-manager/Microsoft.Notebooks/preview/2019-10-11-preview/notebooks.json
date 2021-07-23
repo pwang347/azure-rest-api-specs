@@ -717,6 +717,10 @@
       "type": "object",
       "description": "Wrapper for error response to follow ARM guidelines.",
       "properties": {
+        "error": {
+          "description": "The error response.",
+          "$ref": "#/definitions/ErrorResponse"
+        },
         "message": {
           "type": "string",
           "description": "Error message"
