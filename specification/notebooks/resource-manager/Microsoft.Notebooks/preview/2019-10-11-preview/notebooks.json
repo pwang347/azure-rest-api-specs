@@ -526,17 +526,12 @@
     "NotebookProxy": {
       "description": "A NotebookProxy resource.",
       "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ],
       "properties": {
-        "properties": {
-          "$ref": "#/definitions/NotebookResourceEntity",
-          "description": "The properties of NotebookProxy resource.",
-          "x-ms-client-flatten": true
-        }
+        "properties": { "$ref": "#/definitions/NotebookResourceEntity" },
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "systemData": { "$ref": "#/definitions/NotebookResourceSystemData" }
       }
     },
     "NotebookResourceEntity": {
@@ -550,6 +545,10 @@
         },
         "hostname": {
           "description": "The friendly string identifier of the creator of the NotebookProxy resource.",
+          "type": "string"
+        },
+        "region": {
+          "description": "The region of the NotebookProxy resource.",
           "type": "string"
         }
       }
@@ -684,13 +683,58 @@
       },
       "x-ms-azure-resource": true
     },
+    "NotebookResourceSystemData": {
+      "type": "object",
+      "description": "System data for notebook resource",
+      "properties": {
+        "createdBy": {
+          "type": "string"
+        },
+        "createdByType": {
+          "format": "int32",
+          "enum": [0, 1, 2, 3],
+          "type": "integer"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "type": "string"
+        },
+        "lastModifiedByType": {
+          "format": "int32",
+          "enum": [0, 1, 2, 3],
+          "type": "integer"
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
     "CloudError": {
       "type": "object",
       "description": "Wrapper for error response to follow ARM guidelines.",
       "properties": {
-        "error": {
-          "description": "The error response.",
-          "$ref": "#/definitions/ErrorResponse"
+        "message": {
+          "type": "string",
+          "description": "Error message"
+        },
+        "code": {
+          "type": "string",
+          "description": "Error code"
+        },
+        "target": {
+          "type": "string",
+          "description": "Error target"
+        },
+        "details": {
+          "type": "array",
+          "description": "An array of cloud error objects.",
+          "items": {
+            "$ref": "#/definitions/CloudError"
+          }
         }
       }
     },
