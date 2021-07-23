@@ -688,9 +688,13 @@
       "type": "object",
       "description": "Wrapper for error response to follow ARM guidelines.",
       "properties": {
-        "error": {
-          "description": "The error response.",
-          "$ref": "#/definitions/ErrorResponse"
+        "message": { "type": "string" },
+        "code": { "type": "string" },
+        "target": { "type": "string" },
+        "details": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/CloudError" }
         }
       }
     },
