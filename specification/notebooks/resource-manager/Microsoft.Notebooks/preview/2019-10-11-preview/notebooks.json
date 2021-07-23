@@ -532,7 +532,8 @@
         "name": { "type": "string" },
         "type": { "type": "string" },
         "systemData": { "$ref": "#/definitions/NotebookResourceSystemData" }
-      }
+      },
+      "x-ms-azure-resource": true
     },
     "NotebookResourceEntity": {
       "description": "Properties of NotebookProxy resource",
