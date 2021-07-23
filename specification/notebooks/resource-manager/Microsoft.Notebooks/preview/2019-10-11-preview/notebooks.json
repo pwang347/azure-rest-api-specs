@@ -536,6 +536,32 @@
           "$ref": "#/definitions/NotebookResourceEntity",
           "description": "The properties of NotebookProxy resource.",
           "x-ms-client-flatten": true
+        },
+        "systemData": { "$ref": "#/definitions/NotebookResourceSystemData" }
+      }
+    },
+    "NotebookResourceSystemData": {
+      "type": "object",
+      "properties": {
+        "createdBy": { "type": "string" },
+        "createdByType": {
+          "format": "int32",
+          "enum": [0, 1, 2, 3],
+          "type": "integer"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "lastModifiedBy": { "type": "string" },
+        "lastModifiedByType": {
+          "format": "int32",
+          "enum": [0, 1, 2, 3],
+          "type": "integer"
+        },
+        "lastModifiedAt": {
+          "format": "date-time",
+          "type": "string"
         }
       }
     },
