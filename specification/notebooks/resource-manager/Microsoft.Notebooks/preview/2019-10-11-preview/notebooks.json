@@ -196,9 +196,9 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "OK - empty string",
             "schema": {
-              "$ref": "#/definitions/NotebookProxy"
+              "type": "string"
             }
           },
           "204": {
