@@ -708,19 +708,32 @@
             "$ref": "#/definitions/CloudError"
           },
           "description": "The error details."
+        },
+        "additionalInfo": {
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorAdditionalInfo"
+          },
+          "description": "The error additional info."
         }
       }
     },
-    "ErrorResponse": {
-      "title": "Error response",
-      "description": "Common error response for all Azure Resource Manager APIs to return error details for failed operations. (This also follows the OData error response format.).",
+    "ErrorAdditionalInfo": {
       "type": "object",
       "properties": {
-        "error": {
-          "description": "The error object.",
-          "$ref": "#/definitions/CloudError"
+        "type": {
+          "readOnly": true,
+          "type": "string",
+          "description": "The additional info type."
+        },
+        "info": {
+          "readOnly": true,
+          "type": "object",
+          "description": "The additional info."
         }
-      }
+      },
+      "description": "The resource management error additional info."
     },
     "Operation": {
       "description": "Azure Notebooks Proxy REST API operation",
