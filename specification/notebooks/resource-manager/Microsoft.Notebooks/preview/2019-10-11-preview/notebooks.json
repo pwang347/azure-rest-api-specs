@@ -485,6 +485,9 @@
           "$ref": "#/definitions/NotebookResourceEntity",
           "description": "The properties of NotebookProxy resource.",
           "x-ms-client-flatten": true
+        },
+        "systemData": {
+          "$ref": "#/definitions/NotebookResourceSystemData"
         }
       }
     },
@@ -645,9 +648,6 @@
           "readOnly": true,
           "type": "string",
           "description": "The type of the resource. Ex- Microsoft.Storage/storageAccounts or Microsoft.Notebooks/notebookProxies."
-        },
-        "systemData": {
-          "$ref": "#/definitions/NotebookResourceSystemData"
         }
       },
       "x-ms-azure-resource": true
