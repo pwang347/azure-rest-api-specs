@@ -682,7 +682,7 @@
       "enum": [ "User", "Application", "ManagedIdentity", "Key"],
       "type": "string"
     },
-    "CloudError": {
+    "ErrorDetail": {
       "description": "The error detail.",
       "type": "object",
       "properties": {
