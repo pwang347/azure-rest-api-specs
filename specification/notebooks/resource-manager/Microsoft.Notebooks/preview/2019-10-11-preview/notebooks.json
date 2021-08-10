@@ -56,7 +56,7 @@
           "default": {
             "description": "Error response describing why the operation failed",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -103,7 +103,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -162,7 +162,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -204,7 +204,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -245,7 +245,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -286,7 +286,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -333,7 +333,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -403,7 +403,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -464,7 +464,7 @@
           "default": {
             "description": "Error response describing why the operation failed.",
             "schema": {
-              "$ref": "#/definitions/ErrorDetail"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
