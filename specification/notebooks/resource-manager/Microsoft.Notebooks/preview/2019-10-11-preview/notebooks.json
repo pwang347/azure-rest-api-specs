@@ -705,7 +705,7 @@
           "readOnly": true,
           "type": "array",
           "items": {
-            "$ref": "#/definitions/CloudError"
+            "$ref": "#/definitions/ErrorDetail"
           },
           "description": "The error details."
         },
@@ -726,7 +726,7 @@
       "properties": {
         "error": {
           "description": "The error object.",
-          "$ref": "#/definitions/CloudError"
+          "$ref": "#/definitions/ErrorDetail"
         }
       }
     },
