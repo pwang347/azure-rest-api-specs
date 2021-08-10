@@ -708,14 +708,6 @@
             "$ref": "#/definitions/ErrorDetail"
           },
           "description": "The error details."
-        },
-        "additionalInfo": {
-          "readOnly": true,
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ErrorAdditionalInfo"
-          },
-          "description": "The error additional info."
         }
       }
     },
@@ -726,7 +718,7 @@
       "properties": {
         "error": {
           "description": "The error object.",
-          "$ref": "#/definitions/CloudError"
+          "$ref": "#/definitions/ErrorDetail"
         }
       }
     },
