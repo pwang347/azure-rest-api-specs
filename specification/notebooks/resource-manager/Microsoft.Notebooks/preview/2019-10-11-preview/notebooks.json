@@ -690,6 +690,21 @@
         "error": {
           "description": "The error response.",
           "$ref": "#/definitions/ErrorResponse"
+        },
+        "code": {
+          "type": "string",
+          "description": "Error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message."
+        },
+        "details": {
+          "type": "array",
+          "description": "An array of error detail objects.",
+          "items": {
+            "$ref": "#/definitions/ErrorDetail"
+          }
         }
       }
     },
